@@ -68,6 +68,11 @@ public class PlayerScript : MonoBehaviour
 			transform.position.z
 			);
 
+		if(transform.position.x > 62) {
+			Application.LoadLevel("Menu");
+		
+		}
+
 		
 	}
 	
