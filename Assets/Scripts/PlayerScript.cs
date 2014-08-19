@@ -9,10 +9,15 @@ public class PlayerScript : MonoBehaviour
 	/// 1 - The speed of the ship
 	/// </summary>
 	public Vector2 speed = new Vector2(50, 50);
+	private Animator animator;
 	
 	// 2 - Store the movement
 	private Vector2 movement;
-	
+
+	void Start() {
+		animator = this.GetComponent<Animator> ();
+	}
+
 	void Update()
 	{
 		// 3 - Retrieve axis information
@@ -27,18 +32,27 @@ public class PlayerScript : MonoBehaviour
 
 		// 5 - Shooting
 		bool shoot = Input.GetKeyDown(KeyCode.Space);
+		bool noshoot = Input.GetKeyUp(KeyCode.Space);
 		//shoot |= Input.GetButtonDown("Fire2");
 		// Careful: For Mac users, ctrl + arrow is a bad idea
 		
 		if (shoot)
 		{
+			animator.SetBool("Firing", true);
+
 			WeaponScript weapon = GetComponent<WeaponScript>();
 			if (weapon != null)
 			{
 				// false because the player is not an enemy
 				weapon.Attack(false);
 				SoundEffectsHelper.Instance.MakePlayerShotSound();
+				//animator.SetBool("Firing", false);
 			}
+
+		}
+
+		if (noshoot) {
+				animator.SetBool ("Firing", false);
 		}
 		
 		// ...

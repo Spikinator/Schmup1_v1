@@ -18,6 +18,8 @@ public class WeaponScript : MonoBehaviour
 	/// Cooldown in seconds between two shots
 	/// </summary>
 	public float shootingRate = 0.25f;
+
+	private Vector2 test;
 	
 	//--------------------------------
 	// 2 - Cooldown
@@ -28,6 +30,7 @@ public class WeaponScript : MonoBehaviour
 	void Start()
 	{
 		shootCooldown = 0f;
+		test = GameObject.Find("playership").transform.position;
 	}
 	
 	void Update()
@@ -68,6 +71,7 @@ public class WeaponScript : MonoBehaviour
 			MoveScript move = shotTransform.gameObject.GetComponent<MoveScript>();
 			if (move != null)
 			{
+				//Transform parentTransform = other.gameObject.transform.parent.transform;
 				move.direction = this.transform.right; // towards in 2D space is the right of the sprite
 			}
 		}
