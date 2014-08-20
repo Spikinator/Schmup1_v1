@@ -30,7 +30,7 @@ public class WeaponScript : MonoBehaviour
 	void Start()
 	{
 		shootCooldown = 0f;
-		test = GameObject.Find("playership").transform.position;
+		//test = GameObject.Find("playership").transform.position;
 	}
 	
 	void Update()
