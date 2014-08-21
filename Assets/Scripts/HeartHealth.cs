@@ -10,11 +10,10 @@ public class HeartHealth : MonoBehaviour {
 	public void Start() {
 		animator = this.GetComponent<Animator> ();
 	}
-	
-
-	
+		
 	// Update is called once per frame
 	void Update () {
+
 		holder = GameObject.Find ("playership");
 		HealthScript healthScript = holder.GetComponent<HealthScript>();
 		health = healthScript.hp;
@@ -25,5 +24,7 @@ public class HeartHealth : MonoBehaviour {
 		{
 			animator.SetInteger ("Health", 0);
 		}
+
+
 	}
 }

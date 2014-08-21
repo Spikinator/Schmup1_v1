@@ -1,13 +1,8 @@
 ﻿using UnityEngine;
 
-/// <summary>
-/// Player controller and behavior
-/// </summary>
+
 public class PlayerScript : MonoBehaviour
 {
-	/// <summary>
-	/// 1 - The speed of the ship
-	/// </summary>
 	public Vector2 speed = new Vector2(50, 50);
 	private Animator animator;
 	
@@ -33,9 +28,7 @@ public class PlayerScript : MonoBehaviour
 		// 5 - Shooting
 		bool shoot = Input.GetKeyDown(KeyCode.Space);
 		bool noshoot = Input.GetKeyUp(KeyCode.Space);
-		//shoot |= Input.GetButtonDown("Fire2");
-		// Careful: For Mac users, ctrl + arrow is a bad idea
-		
+				
 		if (shoot)
 		{
 			animator.SetBool("Firing", true);
@@ -54,10 +47,8 @@ public class PlayerScript : MonoBehaviour
 		if (noshoot) {
 				animator.SetBool ("Firing", false);
 		}
-		
-		// ...
 
-		// 6 - Make sure we are not outside the camera bounds
+		// Make sure we are not outside the camera bounds
 		var dist = (transform.position - Camera.main.transform.position).z;
 		
 		var leftBorder = Camera.main.ViewportToWorldPoint(
@@ -83,16 +74,16 @@ public class PlayerScript : MonoBehaviour
 			);
 
 		if(transform.position.x > 62) {
+			ScoreCounterScript.score += this.GetComponent<HealthScript>().hp * 50;
+			Debug.Log (ScoreCounterScript.score);
 			Application.LoadLevel("Menu");
 		
 		}
-
-		
 	}
 	
 	void FixedUpdate()
 	{
-		// 5 - Move the game object
+		//  Move the game object
 		rigidbody2D.velocity = movement;
 	}
 

@@ -3,8 +3,8 @@
 /// <summary>
 /// Start or quit the game
 /// </summary>
-public class GameOverScript : MonoBehaviour
-{
+public class GameOverScript : MonoBehaviour {
+
 	void OnGUI()
 	{
 		const int buttonWidth = 120;

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 34e43e43c618d604a8f5388ccdad6670
+guid: 3826063749a157e4d81d5afbcfec4441
 TextureImporter:
   serializedVersion: 2
   mipmaps:
@@ -24,13 +24,13 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 1
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -44,6 +44,24 @@ TextureImporter:
     textureFormat: -2
     compressionQuality: 50
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: addHitPoint_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 50
+        width: 100
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: addHitPoint_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 100
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
   spritePackingTag: 
   userData: 

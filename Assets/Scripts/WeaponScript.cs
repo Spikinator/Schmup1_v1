@@ -1,36 +1,18 @@
 ﻿using UnityEngine;
 
-/// <summary>
-/// Launch projectile
-/// </summary>
 public class WeaponScript : MonoBehaviour
 {
-	//--------------------------------
-	// 1 - Designer variables
-	//--------------------------------
-	
-	/// <summary>
-	/// Projectile prefab for shooting
-	/// </summary>
+
 	public Transform shotPrefab;
-	
-	/// <summary>
-	/// Cooldown in seconds between two shots
-	/// </summary>
 	public float shootingRate = 0.25f;
 
 	private Vector2 test;
-	
-	//--------------------------------
-	// 2 - Cooldown
-	//--------------------------------
-	
+
 	private float shootCooldown;
 	
 	void Start()
 	{
 		shootCooldown = 0f;
-		//test = GameObject.Find("playership").transform.position;
 	}
 	
 	void Update()
@@ -40,14 +22,7 @@ public class WeaponScript : MonoBehaviour
 			shootCooldown -= Time.deltaTime;
 		}
 	}
-	
-	//--------------------------------
-	// 3 - Shooting from another script
-	//--------------------------------
-	
-	/// <summary>
-	/// Create a new projectile if possible
-	/// </summary>
+
 	public void Attack(bool isEnemy)
 	{
 		if (CanAttack)
@@ -76,10 +51,7 @@ public class WeaponScript : MonoBehaviour
 			}
 		}
 	}
-	
-	/// <summary>
-	/// Is the weapon ready to create a new projectile?
-	/// </summary>
+
 	public bool CanAttack
 	{
 		get

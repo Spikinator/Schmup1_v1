@@ -1,42 +1,49 @@
 ﻿using UnityEngine;
 
-/// <summary>
-/// Handle hitpoints and damages
-/// </summary>
 public class HealthScript : MonoBehaviour
 {
-	/// <summary>
-	/// Total hitpoints
-	/// </summary>
 	public int hp = 1;
-	
-
-
-
-	/// <summary>
-	/// Enemy or player?
-	/// </summary>
+	private Animator animator;
 	public bool isEnemy = true;
 
 
-	/// <summary>
-	/// Inflicts damage and check if the object should be destroyed
-	/// </summary>
-	/// <param name="damageCount"></param>
+	public void Start()
+	{
+		animator = this.GetComponent<Animator> ();
+	}
+
+	public void Update()
+	{
+
+	}
+
 	public void Damage(int damageCount)
 	{
 		hp -= damageCount;
 		
 		if (hp <= 0)
 		{
-			// 'Splosion!
-			SpecialEffectsHelper.Instance.Explosion(transform.position);
+				// 'Splosion!
+				//SpecialEffectsHelper.Instance.Explosion(transform.position);
+				
+				// SOUND
+				SoundEffectsHelper.Instance.MakeExplosionSound();
+				// Dead!
 
-			// SOUND
-			SoundEffectsHelper.Instance.MakeExplosionSound();
+			if(isEnemy)
+			{
+				ScoreCounterScript.score += 100;
+				Destroy(gameObject, 0.3f);
+				animator.SetBool ("IsDestroyed", true);
+			}
 
-			// Dead!
-			Destroy(gameObject, 0.1f);
+
+			else {
+				ScoreCounterScript.score = 0;
+				Destroy(gameObject, 0.1f);
+			}
+
+
 		}
 	}
 	
