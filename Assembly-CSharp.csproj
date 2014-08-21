@@ -173,11 +173,13 @@
      <Compile Include="Assets\Scripts\MoveScript.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
      <Compile Include="Assets\Scripts\RendererExtensions.cs.cs" />
+     <Compile Include="Assets\Scripts\ReplayLevelScript.cs" />
      <Compile Include="Assets\Scripts\ScoreCounterScript.cs" />
      <Compile Include="Assets\Scripts\ScrollingScript.cs" />
      <Compile Include="Assets\Scripts\ShotScript.cs" />
      <Compile Include="Assets\Scripts\SoundEffectsHelper.cs" />
      <Compile Include="Assets\Scripts\SpecialEffectsHelper.cs" />
+     <Compile Include="Assets\Scripts\TypeWriteScript.cs" />
      <Compile Include="Assets\Scripts\WeaponScript.cs" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth Cutout.shader" />
      <None Include="Assets\NGUI\Examples\Models\Orc\Orc Skin.shader" />

@@ -641,7 +641,7 @@ Transform:
   m_PrefabInternal: {fileID: 475312286}
   m_GameObject: {fileID: 160879226}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 50, y: .404928863, z: 0}
+  m_LocalPosition: {x: 0, y: .404928863, z: 0}
   m_LocalScale: {x: 1.29999995, y: 1.29999995, z: 1.29999995}
   m_Children: []
   m_Father: {fileID: 840100674}
@@ -867,7 +867,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 2c07169e564b0c74f9ef9c9e5989d5e8, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2c07169e564b0c74f9ef9c9e5989d5e8, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1889,7 +1889,7 @@ GUIText:
   m_Text: 'Score: 0'
   m_Anchor: 0
   m_Alignment: 1
-  m_PixelOffset: {x: -250, y: 205}
+  m_PixelOffset: {x: -230, y: 177}
   m_LineSpacing: 1
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: 128b287b5a833fd4985708fc6a4ed21d, type: 3}

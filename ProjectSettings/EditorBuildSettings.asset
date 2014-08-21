@@ -9,3 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/menu.unity
   - enabled: 1
     path: Assets/Scenes/Stage1.unity
+  - enabled: 1
+    path: Assets/Scenes/TypeWriteTestScene.unity
+  - enabled: 1
+    path: Assets/Scenes/WinScene.unity
