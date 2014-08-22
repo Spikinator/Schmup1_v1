@@ -17,6 +17,7 @@ public class ReplayLevelScript : MonoBehaviour {
 		menu = Input.GetKeyDown (KeyCode.Return);
 
 		if (back) {
+			ScoreCounterScript.score = 0;
 			Application.LoadLevel("Stage1"); // load the level!!!!!!
 		}
 

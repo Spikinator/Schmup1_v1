@@ -234,8 +234,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   letterPause: .0500000007
   sound: {fileID: 0}
-  wait: 8
-  message: blah blah.
+  wait: 6.5
+  message: +100 for each enemy, +50 for each life at the end
 --- !u!132 &1237257060
 GUIText:
   m_ObjectHideFlags: 0
@@ -351,7 +351,7 @@ MonoBehaviour:
   letterPause: .0500000007
   sound: {fileID: 0}
   wait: 0
-  message: Blah blah blah blah blah blah blah blah blah blah blah
+  message: Shoot as many drones as you can to get a higher score
 --- !u!132 &1430097010
 GUIText:
   m_ObjectHideFlags: 0
@@ -417,7 +417,7 @@ MonoBehaviour:
   letterPause: .0500000007
   sound: {fileID: 0}
   wait: 4
-  message: blah blah blah blah blah blah blah blah blah blah blah
+  message: Use space to shoot and arrows to move
 --- !u!132 &2033200189
 GUIText:
   m_ObjectHideFlags: 0

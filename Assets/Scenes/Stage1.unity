@@ -188,7 +188,7 @@ Transform:
   m_PrefabInternal: {fileID: 1642216679}
   m_GameObject: {fileID: 50308649}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 48.3460121, y: -3.05684447, z: 0}
+  m_LocalPosition: {x: 41.9040031, y: -.167232171, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1978199075}
@@ -272,6 +272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 1
   isEnemy: 1
+  delay: 0
 --- !u!114 &50308654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,7 +367,7 @@ Transform:
   m_PrefabInternal: {fileID: 1729686517}
   m_GameObject: {fileID: 90453636}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.497858, y: -2.96054912, z: 0}
+  m_LocalPosition: {x: 25.8664551, y: -2.6974082, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2061988294}
@@ -450,6 +451,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 1
   isEnemy: 1
+  delay: 0
 --- !u!114 &90453641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -675,6 +677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 3
   isEnemy: 0
+  delay: 0
 --- !u!114 &160879230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1108,6 +1111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 1
   isEnemy: 1
+  delay: 0
 --- !u!114 &626260226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1282,7 +1286,7 @@ Transform:
   m_PrefabInternal: {fileID: 1955864006}
   m_GameObject: {fileID: 810225972}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.9727726, y: 2.01571751, z: 0}
+  m_LocalPosition: {x: 20.7088261, y: 1.54061329, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1657027999}
@@ -1366,6 +1370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 1
   isEnemy: 1
+  delay: 0
 --- !u!114 &810225977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1552,6 +1557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 1
   isEnemy: 1
+  delay: 0
 --- !u!114 &847658314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1672,7 +1678,7 @@ Transform:
   m_PrefabInternal: {fileID: 1648175451}
   m_GameObject: {fileID: 953230814}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 66.3029327, y: -2.88174248, z: 0}
+  m_LocalPosition: {x: 52.2965393, y: -4.00170183, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1687980572}
@@ -1756,6 +1762,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 1
   isEnemy: 1
+  delay: 0
 --- !u!114 &953230819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1861,7 +1868,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotPrefab: {fileID: 400000, guid: 6c074722fe6b4f440b809da4fcf4b475, type: 2}
-  shootingRate: .25
+  shootingRate: 1
 --- !u!1 &1134670346
 GameObject:
   m_ObjectHideFlags: 0
@@ -1889,7 +1896,7 @@ GUIText:
   m_Text: 'Score: 0'
   m_Anchor: 0
   m_Alignment: 1
-  m_PixelOffset: {x: -230, y: 177}
+  m_PixelOffset: {x: -230, y: 217.100006}
   m_LineSpacing: 1
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: 128b287b5a833fd4985708fc6a4ed21d, type: 3}
@@ -1952,7 +1959,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotPrefab: {fileID: 400000, guid: 6c074722fe6b4f440b809da4fcf4b475, type: 2}
-  shootingRate: .25
+  shootingRate: 1
 --- !u!1 &1483596566
 GameObject:
   m_ObjectHideFlags: 0
@@ -2021,6 +2028,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreKeeper: {fileID: 1134670347}
+  fontSize: 24
 --- !u!1 &1499820321
 GameObject:
   m_ObjectHideFlags: 0
@@ -2050,7 +2058,7 @@ Transform:
   m_PrefabInternal: {fileID: 1573701357}
   m_GameObject: {fileID: 1499820321}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35.8407936, y: 1.10021877, z: 0}
+  m_LocalPosition: {x: 34.2619476, y: 1.95784354, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1066534233}
@@ -2134,6 +2142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 1
   isEnemy: 1
+  delay: 0
 --- !u!114 &1499820326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2208,11 +2217,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 2ca83f41f16c44747b16e9b4f96eb54b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 35.8407936
+      value: 34.2619476
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2ca83f41f16c44747b16e9b4f96eb54b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.10021877
+      value: 1.95784354
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2ca83f41f16c44747b16e9b4f96eb54b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2306,7 +2315,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1627056018}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.21122777, y: 1.66208553, z: 0}
+  m_LocalPosition: {x: -1.21122789, y: 1.66208553, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 601076857}
@@ -2369,11 +2378,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 2ca83f41f16c44747b16e9b4f96eb54b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 48.3460121
+      value: 41.9040031
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2ca83f41f16c44747b16e9b4f96eb54b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.05684447
+      value: -.167232171
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2ca83f41f16c44747b16e9b4f96eb54b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2409,11 +2418,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 2ca83f41f16c44747b16e9b4f96eb54b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 66.3029327
+      value: 52.2965393
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2ca83f41f16c44747b16e9b4f96eb54b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.88174248
+      value: -4.00170183
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2ca83f41f16c44747b16e9b4f96eb54b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2480,7 +2489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotPrefab: {fileID: 400000, guid: 6c074722fe6b4f440b809da4fcf4b475, type: 2}
-  shootingRate: .25
+  shootingRate: 1
 --- !u!1 &1687980571
 GameObject:
   m_ObjectHideFlags: 0
@@ -2521,7 +2530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotPrefab: {fileID: 400000, guid: 6c074722fe6b4f440b809da4fcf4b475, type: 2}
-  shootingRate: .25
+  shootingRate: 1
 --- !u!1001 &1698914100
 Prefab:
   m_ObjectHideFlags: 0
@@ -2571,11 +2580,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 2ca83f41f16c44747b16e9b4f96eb54b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 28.497858
+      value: 25.8664551
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2ca83f41f16c44747b16e9b4f96eb54b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.96054912
+      value: -2.6974082
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2ca83f41f16c44747b16e9b4f96eb54b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2709,7 +2718,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotPrefab: {fileID: 400000, guid: 6c074722fe6b4f440b809da4fcf4b475, type: 2}
-  shootingRate: .25
+  shootingRate: 1
 --- !u!1 &1926648864
 GameObject:
   m_ObjectHideFlags: 0
@@ -2746,11 +2755,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 2ca83f41f16c44747b16e9b4f96eb54b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 20.9727726
+      value: 20.7088261
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2ca83f41f16c44747b16e9b4f96eb54b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.01571751
+      value: 1.54061329
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2ca83f41f16c44747b16e9b4f96eb54b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2817,7 +2826,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotPrefab: {fileID: 400000, guid: 6c074722fe6b4f440b809da4fcf4b475, type: 2}
-  shootingRate: .25
+  shootingRate: 1
 --- !u!1 &1988308751
 GameObject:
   m_ObjectHideFlags: 0
@@ -2903,4 +2912,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotPrefab: {fileID: 400000, guid: 6c074722fe6b4f440b809da4fcf4b475, type: 2}
-  shootingRate: .25
+  shootingRate: 1

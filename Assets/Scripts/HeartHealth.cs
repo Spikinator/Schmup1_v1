@@ -14,13 +14,18 @@ public class HeartHealth : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		holder = GameObject.Find ("playership");
-		HealthScript healthScript = holder.GetComponent<HealthScript>();
-		health = healthScript.hp;
 
-		animator.SetInteger("Health", health);
+		if (holder != null) {
 
-		if (holder == null) 
+			holder = GameObject.Find ("playership");
+			HealthScript healthScript = holder.GetComponent<HealthScript>();
+			health = healthScript.hp;
+			
+			animator.SetInteger("Health", health);
+		}
+
+
+		else if(holder == null) 
 		{
 			animator.SetInteger ("Health", 0);
 		}

@@ -39,7 +39,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotPrefab: {fileID: 400000, guid: 6c074722fe6b4f440b809da4fcf4b475, type: 2}
-  shootingRate: .25
+  shootingRate: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

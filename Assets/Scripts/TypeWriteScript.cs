@@ -49,7 +49,7 @@ public class TypeWriteScript : MonoBehaviour {
 				yield return 0;
 				yield return new WaitForSeconds (letterPause);
 			}   
-			yield return new WaitForSeconds(wait);
+			//yield return new WaitForSeconds(wait);
 
 		   
 	}

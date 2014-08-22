@@ -20,7 +20,7 @@ public class EnemyScript : MonoBehaviour
 		hasSpawn = false;
 		collider2D.enabled = false;
 
-		moveScript.enabled = false;
+		//moveScript.enabled = false;
 		foreach (WeaponScript weapon in weapons)
 		{
 			weapon.enabled = false;
@@ -64,7 +64,7 @@ public class EnemyScript : MonoBehaviour
 		
 		// Enable everything
 		collider2D.enabled = true;
-		moveScript.enabled = true;
+		//moveScript.enabled = true;
 
 		foreach (WeaponScript weapon in weapons)
 		{

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class HealthScript : MonoBehaviour
 {
@@ -6,15 +7,28 @@ public class HealthScript : MonoBehaviour
 	private Animator animator;
 	public bool isEnemy = true;
 
+	/*private GameObject displayHit;
+	private Animator hitAnimator;*/
+
+	public bool delay = false;
 
 	public void Start()
 	{
+		//displayHit = GameObject.Find ("hitPoint");
+		//hitAnimator = displayHit.GetComponent<Animator> ();
 		animator = this.GetComponent<Animator> ();
 	}
 
 	public void Update()
 	{
+		if (delay) {
+			//StartCoroutine(Wait());
+		}
+	}
 
+	IEnumerator Wait()
+	{
+			yield return new WaitForSeconds(3);
 	}
 
 	public void Damage(int damageCount)
@@ -23,29 +37,47 @@ public class HealthScript : MonoBehaviour
 		
 		if (hp <= 0)
 		{
+				
+			if(isEnemy)
+			{
+				//hitAnimator.SetBool ("isHit", true);
 				// 'Splosion!
-				//SpecialEffectsHelper.Instance.Explosion(transform.position);
+				SpecialEffectsHelper.Instance.Explosion(transform.position);
 				
 				// SOUND
 				SoundEffectsHelper.Instance.MakeExplosionSound();
 				// Dead!
 
-			if(isEnemy)
-			{
+
 				ScoreCounterScript.score += 100;
-				Destroy(gameObject, 0.3f);
+				Destroy(gameObject);
 				animator.SetBool ("IsDestroyed", true);
+
+				//hitAnimator.SetBool ("isHit", false);
 			}
 
 
 			else {
+
+				// 'Splosion!
+				SpecialEffectsHelper.Instance.Explosion(transform.position);
+				// SOUND
+				SoundEffectsHelper.Instance.MakeExplosionSound();
+				// Dead!
+
 				ScoreCounterScript.score = 0;
-				Destroy(gameObject, 0.1f);
+
+				StartCoroutine(Wait());
+
+				delay = true;
+				Destroy(gameObject, 2.0f);
+				StartCoroutine(Wait ());
+				Application.LoadLevel("LoseScene");
 			}
-
-
 		}
 	}
+
+
 	
 	void OnTriggerEnter2D(Collider2D otherCollider)
 	{

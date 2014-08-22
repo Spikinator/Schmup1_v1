@@ -71,7 +71,7 @@ public class PlayerScript : MonoBehaviour
 			Mathf.Clamp(transform.position.x, leftBorder, rightBorder),
 			Mathf.Clamp(transform.position.y, topBorder, bottomBorder),
 			transform.position.z
-			);
+		);
 
 		if(transform.position.x > 62) {
 			ScoreCounterScript.score += this.GetComponent<HealthScript>().hp * 50;
@@ -86,8 +86,8 @@ public class PlayerScript : MonoBehaviour
 		//  Move the game object
 		rigidbody2D.velocity = movement;
 	}
-
 	
+
 	void OnCollisionEnter2D(Collision2D collision)
 	{
 		bool damagePlayer = false;
@@ -116,7 +116,7 @@ public class PlayerScript : MonoBehaviour
 		// Game Over.
 		// Add the script to the parent because the current game
 		// object is likely going to be destroyed immediately.
-		transform.parent.gameObject.AddComponent<GameOverScript>();
+		//transform.parent.gameObject.AddComponent<GameOverScript>();
 	}
 }
 
