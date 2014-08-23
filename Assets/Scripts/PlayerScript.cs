@@ -73,7 +73,7 @@ public class PlayerScript : MonoBehaviour
 			transform.position.z
 		);
 
-		if(transform.position.x > 55) {
+		if(transform.position.x > 75) {
 			ScoreCounterScript.current_score += this.GetComponent<HealthScript>().hp * 50;
 			Debug.Log (ScoreCounterScript.current_score);
 			Application.LoadLevel("WinScene");

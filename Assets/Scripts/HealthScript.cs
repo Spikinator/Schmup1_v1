@@ -28,41 +28,30 @@ public class HealthScript : MonoBehaviour
 		
 		if (hp <= 0)
 		{
-				
 			if(isEnemy)
 			{
-				//hitAnimator.SetBool ("isHit", true);
-				// 'Splosion!
-				SpecialEffectsHelper.Instance.Explosion(transform.position);
-				
-				// SOUND
-				SoundEffectsHelper.Instance.MakeExplosionSound();
-				// Dead!
-
-
 				ScoreCounterScript.current_score += 100;
-				Destroy(gameObject);
-				//animator.SetBool ("IsDestroyed", true);
-
-				//hitAnimator.SetBool ("isHit", false);
 			}
-
-
+			
 			else {
-
-				// 'Splosion!
-				SpecialEffectsHelper.Instance.Explosion(transform.position);
-				// SOUND
-				SoundEffectsHelper.Instance.MakeExplosionSound();
-				// Dead!
-
 				ScoreCounterScript.current_score = 0;
-
-				Destroy(gameObject);
-				//Application.LoadLevel("LoseScene");
-
-
 			}
+
+			//hitAnimator.SetBool ("isHit", true);
+			// 'Splosion!
+			SpecialEffectsHelper.Instance.Explosion(transform.position);
+			
+			// SOUND
+			SoundEffectsHelper.Instance.MakeExplosionSound();
+			// Dead!
+
+			Destroy(gameObject);
+
+			//animator.SetBool ("IsDestroyed", true);
+
+			//hitAnimator.SetBool ("isHit", false);
+		
+
 		}
 	}
 
