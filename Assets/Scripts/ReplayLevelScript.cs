@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class ReplayLevelScript : MonoBehaviour {
@@ -17,7 +17,7 @@ public class ReplayLevelScript : MonoBehaviour {
 		menu = Input.GetKeyDown (KeyCode.Return);
 
 		if (back) {
-			ScoreCounterScript.score = 0;
+			ScoreCounterScript.current_score = 0;
 			Application.LoadLevel("Stage1"); // load the level!!!!!!
 		}
 

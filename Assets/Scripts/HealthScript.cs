@@ -40,7 +40,7 @@ public class HealthScript : MonoBehaviour
 				// Dead!
 
 
-				ScoreCounterScript.score += 100;
+				ScoreCounterScript.current_score += 100;
 				Destroy(gameObject);
 				//animator.SetBool ("IsDestroyed", true);
 
@@ -56,7 +56,7 @@ public class HealthScript : MonoBehaviour
 				SoundEffectsHelper.Instance.MakeExplosionSound();
 				// Dead!
 
-				ScoreCounterScript.score = 0;
+				ScoreCounterScript.current_score = 0;
 
 				Destroy(gameObject);
 				//Application.LoadLevel("LoseScene");
