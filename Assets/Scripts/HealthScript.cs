@@ -41,8 +41,8 @@ public class HealthScript : MonoBehaviour
 
 
 				ScoreCounterScript.score += 100;
-				Destroy(gameObject, 3.0f);
-				animator.SetBool ("IsDestroyed", true);
+				Destroy(gameObject);
+				//animator.SetBool ("IsDestroyed", true);
 
 				//hitAnimator.SetBool ("isHit", false);
 			}
