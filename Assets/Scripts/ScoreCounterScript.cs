@@ -17,26 +17,27 @@ public class ScoreCounterScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if (PlayerPrefs.GetInt ("current_score") == null) {
-			current_score = 0;
+		if(!PlayerPrefs.HasKey ("best_score"))
+		{
+			PlayerPrefs.SetInt ("best_score", 0);
 		}
 
-		PlayerPrefs.SetInt("Player Score", 10);
+		else if(!PlayerPrefs.HasKey("total_score"))
+		{
+			PlayerPrefs.SetInt ("total_score", 0);
+		}
+
+		best_score = PlayerPrefs.GetInt ("best_score");
+		total_score = PlayerPrefs.GetInt ("total_score");
+	
+		total_score += current_score;
+		//PlayerPrefs.SetInt("Player Score", 10);
 
 		holder = GameObject.Find ("playership");
-
-		if (total_score == null) {
-			total_score = 0;
-		}
-		total_score += current_score;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
-		if (best_score == null) {
-			best_score = 0;		
-		}
 
 		if (current_score > best_score) {
 			best_score = current_score;		
@@ -44,5 +45,8 @@ public class ScoreCounterScript : MonoBehaviour {
 
 		scoreKeeper.text = "Score: " + current_score.ToString () + " " + total_score.ToString() + " " + best_score.ToString ();
 		scoreKeeper.fontSize = fontSize;
+
+		PlayerPrefs.SetInt ("best_score", best_score);
+		PlayerPrefs.SetInt ("total_score", total_score);
 	}
 }
