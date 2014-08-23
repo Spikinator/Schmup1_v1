@@ -10,8 +10,6 @@ public class HealthScript : MonoBehaviour
 	/*private GameObject displayHit;
 	private Animator hitAnimator;*/
 
-	public bool delay = false;
-
 	public void Start()
 	{
 		//displayHit = GameObject.Find ("hitPoint");
@@ -21,15 +19,8 @@ public class HealthScript : MonoBehaviour
 
 	public void Update()
 	{
-		if (delay) {
-			//StartCoroutine(Wait());
-		}
 	}
-
-	IEnumerator Wait()
-	{
-			yield return new WaitForSeconds(3);
-	}
+	
 
 	public void Damage(int damageCount)
 	{
@@ -50,7 +41,7 @@ public class HealthScript : MonoBehaviour
 
 
 				ScoreCounterScript.score += 100;
-				Destroy(gameObject);
+				Destroy(gameObject, 3.0f);
 				animator.SetBool ("IsDestroyed", true);
 
 				//hitAnimator.SetBool ("isHit", false);
@@ -67,12 +58,10 @@ public class HealthScript : MonoBehaviour
 
 				ScoreCounterScript.score = 0;
 
-				StartCoroutine(Wait());
+				Destroy(gameObject);
+				//Application.LoadLevel("LoseScene");
 
-				delay = true;
-				Destroy(gameObject, 2.0f);
-				StartCoroutine(Wait ());
-				Application.LoadLevel("LoseScene");
+
 			}
 		}
 	}
