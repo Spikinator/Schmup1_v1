@@ -14,7 +14,7 @@ public class ClickScript : MonoBehaviour {
 	{
 		enter = Input.GetKeyDown (KeyCode.Return);
 		if (enter) {
-			Application.LoadLevel("TypeWriteTestScene"); // load the level!!!!!!
+			Application.LoadLevel("PlayerStats"); // load the level!!!!!!
 		}
 	}
 

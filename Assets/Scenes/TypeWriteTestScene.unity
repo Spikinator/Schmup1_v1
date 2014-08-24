@@ -108,9 +108,8 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
   m_SortingLayerID: 0
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 24c4e15e35bddbe4c859e13feec13a5c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &676482626
@@ -124,6 +123,7 @@ Transform:
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 5
 --- !u!1 &679416292
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,8 +191,11 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
   m_HDR: 0
   m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: .0219999999
 --- !u!4 &679416297
 Transform:
   m_ObjectHideFlags: 0
@@ -204,6 +207,74 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 3
+--- !u!1 &747462102
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 747462105}
+  - 132: {fileID: 747462104}
+  - 114: {fileID: 747462103}
+  m_Layer: 0
+  m_Name: 4 - Line
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &747462103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 747462102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92ba953c85be561438f0287b0e854355, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  letterPause: .0199999996
+  sound: {fileID: 0}
+  wait: 9.5
+  message: Collect the cash to buy upgrades, +$10 for gold, +$5 for silver
+--- !u!132 &747462104
+GUIText:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 747462102}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Text: Gui Text
+  m_Anchor: 0
+  m_Alignment: 0
+  m_PixelOffset: {x: -300, y: 60}
+  m_LineSpacing: 1
+  m_TabSize: 4
+  m_Font: {fileID: 12800000, guid: 128b287b5a833fd4985708fc6a4ed21d, type: 3}
+  m_Material: {fileID: 0}
+  m_FontSize: 0
+  m_FontStyle: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967249
+  m_PixelCorrect: 1
+  m_RichText: 1
+--- !u!4 &747462105
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 747462102}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .5, y: .5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
 --- !u!1 &1237257058
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,9 +303,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92ba953c85be561438f0287b0e854355, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  letterPause: .0500000007
+  letterPause: .0199999996
   sound: {fileID: 0}
-  wait: 6.5
+  wait: 7
   message: +100 for each enemy, +50 for each life at the end
 --- !u!132 &1237257060
 GUIText:
@@ -270,6 +341,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 2
 --- !u!1 &1240216087
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,6 +392,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 4
 --- !u!1 &1430097008
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,7 +421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92ba953c85be561438f0287b0e854355, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  letterPause: .0500000007
+  letterPause: .0199999996
   sound: {fileID: 0}
   wait: 0
   message: Shoot as many drones as you can to get a higher score
@@ -386,6 +459,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 0
 --- !u!1 &2033200187
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,10 +488,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92ba953c85be561438f0287b0e854355, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  letterPause: .0500000007
+  letterPause: .0199999996
   sound: {fileID: 0}
-  wait: 4
-  message: Use space to shoot and arrows to move
+  wait: 3.5
+  message: Use space to shoot and arrows / WASD to move
 --- !u!132 &2033200189
 GUIText:
   m_ObjectHideFlags: 0
@@ -452,3 +526,4 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 1
