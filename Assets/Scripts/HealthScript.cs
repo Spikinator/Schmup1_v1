@@ -46,12 +46,6 @@ public class HealthScript : MonoBehaviour
 			// Dead!
 
 			Destroy(gameObject);
-
-			//animator.SetBool ("IsDestroyed", true);
-
-			//hitAnimator.SetBool ("isHit", false);
-		
-
 		}
 	}
 

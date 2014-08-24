@@ -171,6 +171,7 @@
      <Compile Include="Assets\Scripts\HeartHealth.cs" />
      <Compile Include="Assets\Scripts\MenuScript.cs" />
      <Compile Include="Assets\Scripts\MoveScript.cs" />
+     <Compile Include="Assets\Scripts\PauseScript.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
      <Compile Include="Assets\Scripts\RendererExtensions.cs.cs" />
      <Compile Include="Assets\Scripts\ReplayLevelScript.cs" />

@@ -1,16 +1,20 @@
 ﻿using UnityEngine;
 
-// enemy behavior
+/// <summary>
+/// Enemy generic behavior
+/// </summary>
 public class EnemyScript : MonoBehaviour
 {
 	private bool hasSpawn;
 	private MoveScript moveScript;
 	private WeaponScript[] weapons;
-
-
+	
 	void Awake()
 	{
+		// Retrieve the weapon only once
 		weapons = GetComponentsInChildren<WeaponScript>();
+		
+		// Retrieve scripts to disable when not spawn
 		moveScript = GetComponent<MoveScript>();
 	}
 	
@@ -18,9 +22,13 @@ public class EnemyScript : MonoBehaviour
 	void Start()
 	{
 		hasSpawn = false;
+		
+		// Disable everything
+		// -- collider
 		collider2D.enabled = false;
-
-		//moveScript.enabled = false;
+		// -- Moving
+		moveScript.enabled = false;
+		// -- Shooting
 		foreach (WeaponScript weapon in weapons)
 		{
 			weapon.enabled = false;
@@ -52,7 +60,6 @@ public class EnemyScript : MonoBehaviour
 			// 4 - Out of the camera ? Destroy the game object.
 			if (renderer.IsVisibleFrom(Camera.main) == false)
 			{
-				//SpecialEffectsHelper.Instance.Explosion(transform.position);
 				Destroy(gameObject);
 			}
 		}
@@ -64,9 +71,11 @@ public class EnemyScript : MonoBehaviour
 		hasSpawn = true;
 		
 		// Enable everything
+		// -- Collider
 		collider2D.enabled = true;
-		//moveScript.enabled = true;
-
+		// -- Moving
+		moveScript.enabled = true;
+		// -- Shooting
 		foreach (WeaponScript weapon in weapons)
 		{
 			weapon.enabled = true;
