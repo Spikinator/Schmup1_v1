@@ -43,7 +43,7 @@ public class ScoreCounterScript : MonoBehaviour {
 			PlayerPrefs.SetInt ("total_score", 0);
 		}
 
-		total_score += current_score;
+		//total_score += current_score;
 
 		highest_level = PlayerPrefs.GetInt ("highest_level");
 
