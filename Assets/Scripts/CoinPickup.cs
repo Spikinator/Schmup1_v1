@@ -18,8 +18,10 @@ public class CoinPickup : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		
 		if (other.gameObject.name == "playership") {
-			Destroy(this.gameObject);
 			ScoreCounterScript.cash += value;
+			SoundEffectsHelper.Instance.MakeCoinSound();
+			Destroy(this.gameObject);
+
 		}
 	}
 }

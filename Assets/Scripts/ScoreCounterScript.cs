@@ -43,6 +43,7 @@ public class ScoreCounterScript : MonoBehaviour {
 			PlayerPrefs.SetInt ("total_score", 0);
 		}
 
+		total_score += current_score;
 
 		highest_level = PlayerPrefs.GetInt ("highest_level");
 
@@ -51,7 +52,7 @@ public class ScoreCounterScript : MonoBehaviour {
 		best_score = PlayerPrefs.GetInt ("best_score");
 		total_score = PlayerPrefs.GetInt ("total_score");
 	
-		total_score += current_score;
+
 		//PlayerPrefs.SetInt("Player Score", 10);
 
 		holder = GameObject.Find ("playership");
@@ -63,6 +64,8 @@ public class ScoreCounterScript : MonoBehaviour {
 		if (current_score > best_score) {
 			best_score = current_score;		
 		}
+
+
 
 		scoreKeeper.text = "Score: " + current_score.ToString ();
 		scoreKeeper.fontSize = fontSize;

@@ -14,6 +14,7 @@ public class PlayerStats : MonoBehaviour {
 
 
 		total_score.text = "" + PlayerPrefs.GetInt ("total_score");
+		Debug.Log(" " + PlayerPrefs.GetInt("total_score"));
 		level.text = "" + PlayerPrefs.GetInt ("highest_level");
 		cash.text = "" + PlayerPrefs.GetInt ("cash");
 		current_score.text = "" + ScoreCounterScript.current_score;

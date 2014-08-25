@@ -15,6 +15,7 @@ public class SoundEffectsHelper : MonoBehaviour
 	public AudioClip explosionSound;
 	public AudioClip playerShotSound;
 	public AudioClip enemyShotSound;
+	public AudioClip coinSound;
 	
 	void Awake()
 	{
@@ -39,6 +40,11 @@ public class SoundEffectsHelper : MonoBehaviour
 	public void MakeEnemyShotSound()
 	{
 		MakeSound(enemyShotSound);
+	}
+
+	public void MakeCoinSound()
+	{
+		MakeSound(coinSound);
 	}
 	
 	/// <summary>

@@ -405,6 +405,8 @@ MonoBehaviour:
   total_score: {fileID: 2146601093}
   level: {fileID: 269669800}
   cash: {fileID: 585877579}
+  current_score: {fileID: 0}
+  best_score: {fileID: 0}
 --- !u!114 &932242862
 MonoBehaviour:
   m_ObjectHideFlags: 0
