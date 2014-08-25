@@ -11,8 +11,6 @@ public class PlayerStats : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
-
 		total_score.text = "" + PlayerPrefs.GetInt ("total_score");
 		Debug.Log(" " + PlayerPrefs.GetInt("total_score"));
 		level.text = "" + PlayerPrefs.GetInt ("highest_level");

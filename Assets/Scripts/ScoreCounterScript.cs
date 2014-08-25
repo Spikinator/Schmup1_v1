@@ -12,6 +12,8 @@ public class ScoreCounterScript : MonoBehaviour {
 
 	public static int cash;
 
+	public static int unlocked;
+
 	public GUIText scoreKeeper;
 	public GUIText cashTracker;
 
@@ -22,6 +24,10 @@ public class ScoreCounterScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+		if (!PlayerPrefs.HasKey ("unlocked")) {
+			PlayerPrefs.SetInt("unlocked", 0);		
+		}
 
 		if (!PlayerPrefs.HasKey ("cash")) {
 			PlayerPrefs.SetInt("cash", 0);		
@@ -37,13 +43,12 @@ public class ScoreCounterScript : MonoBehaviour {
 		}
 
 
-
 		else if(!PlayerPrefs.HasKey("total_score"))
 		{
 			PlayerPrefs.SetInt ("total_score", 0);
 		}
 
-		//total_score += current_score;
+		unlocked = PlayerPrefs.GetInt ("unlocked");
 
 		highest_level = PlayerPrefs.GetInt ("highest_level");
 
@@ -51,9 +56,6 @@ public class ScoreCounterScript : MonoBehaviour {
 
 		best_score = PlayerPrefs.GetInt ("best_score");
 		total_score = PlayerPrefs.GetInt ("total_score");
-	
-
-		//PlayerPrefs.SetInt("Player Score", 10);
 
 		holder = GameObject.Find ("playership");
 	}
@@ -65,7 +67,8 @@ public class ScoreCounterScript : MonoBehaviour {
 			best_score = current_score;		
 		}
 
-
+		unlocked = highest_level + 1;
+		Debug.Log (unlocked);
 
 		scoreKeeper.text = "Score: " + current_score.ToString ();
 		scoreKeeper.fontSize = fontSize;
@@ -73,6 +76,7 @@ public class ScoreCounterScript : MonoBehaviour {
 		cashTracker.text = "Cash: $" + cash;
 		cashTracker.fontSize = fontSize;
 
+		PlayerPrefs.SetInt ("unlocked", unlocked);
 		PlayerPrefs.SetInt ("best_score", best_score);
 		PlayerPrefs.SetInt ("total_score", total_score);
 		PlayerPrefs.SetInt ("cash", cash);

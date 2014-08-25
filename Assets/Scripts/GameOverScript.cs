@@ -16,7 +16,12 @@ public class GameOverScript : MonoBehaviour {
 	IEnumerator Delay()
 	{
 		yield return new WaitForSeconds (2.0f);
-		Application.LoadLevel("LoseScene");
+		if (Application.loadedLevelName == "Stage1") {
+			Application.LoadLevel ("LoseScene");
+		} else if (Application.loadedLevelName == "Stage2") {
+			Application.LoadLevel ("LoseScene2");
+		}
+
 	}
 
 }

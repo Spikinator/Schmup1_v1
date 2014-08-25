@@ -14,7 +14,7 @@ public class ClickToIntro : MonoBehaviour {
 	{
 		enter = Input.GetKeyDown (KeyCode.Return);
 		if (enter) {
-			Application.LoadLevel("TypeWriteTestScene"); // load the level!!!!!!
+			Application.LoadLevel("LevelSelect"); // load the level!!!!!!
 		}
 	}
 }

@@ -82,17 +82,15 @@ public class PlayerScript : MonoBehaviour
 				ScoreCounterScript.highest_level = 1;
 				
 				ScoreCounterScript.total_score += ScoreCounterScript.current_score;
-				Debug.Log (ScoreCounterScript.total_score);
 			}
 
-			else if(Application.loadedLevelName == "Stage2")
+			if(Application.loadedLevelName == "Stage2")
 			{
 				ScoreCounterScript.current_score += this.GetComponent<HealthScript>().hp * 50;
 				Application.LoadLevel("WinScene2");
 				ScoreCounterScript.highest_level = 2;
 				
 				ScoreCounterScript.total_score += ScoreCounterScript.current_score;
-				Debug.Log (ScoreCounterScript.total_score);
 			}
 
 		}
