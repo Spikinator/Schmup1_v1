@@ -296,7 +296,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b93c4591807da2044b3d9827a28e3da9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5b561ce4c27463a438e4305a81bb0656, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &330691183
 Transform:
@@ -385,7 +385,7 @@ GUIText:
   m_GameObject: {fileID: 689100963}
   m_Enabled: 1
   serializedVersion: 3
-  m_Text: Press ENTER to go to Level 2 >>
+  m_Text: Press ENTER to go to menu >>
   m_Anchor: 0
   m_Alignment: 0
   m_PixelOffset: {x: 12.71, y: -43.4799995}

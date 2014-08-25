@@ -74,12 +74,27 @@ public class PlayerScript : MonoBehaviour
 		);
 
 		if(transform.position.x > 45) {
-			ScoreCounterScript.current_score += this.GetComponent<HealthScript>().hp * 50;
-			Application.LoadLevel("WinScene");
-			ScoreCounterScript.highest_level = 1;
 
-			ScoreCounterScript.total_score += ScoreCounterScript.current_score;
-			Debug.Log (ScoreCounterScript.total_score);
+			if(Application.loadedLevelName == "Stage1")
+			{
+				ScoreCounterScript.current_score += this.GetComponent<HealthScript>().hp * 50;
+				Application.LoadLevel("WinScene");
+				ScoreCounterScript.highest_level = 1;
+				
+				ScoreCounterScript.total_score += ScoreCounterScript.current_score;
+				Debug.Log (ScoreCounterScript.total_score);
+			}
+
+			else if(Application.loadedLevelName == "Stage2")
+			{
+				ScoreCounterScript.current_score += this.GetComponent<HealthScript>().hp * 50;
+				Application.LoadLevel("WinScene2");
+				ScoreCounterScript.highest_level = 2;
+				
+				ScoreCounterScript.total_score += ScoreCounterScript.current_score;
+				Debug.Log (ScoreCounterScript.total_score);
+			}
+
 		}
 	}
 	
