@@ -68,7 +68,6 @@ public class ScoreCounterScript : MonoBehaviour {
 		}
 
 		unlocked = highest_level + 1;
-		Debug.Log (unlocked);
 
 		scoreKeeper.text = "Score: " + current_score.ToString ();
 		scoreKeeper.fontSize = fontSize;

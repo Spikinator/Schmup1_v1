@@ -3,29 +3,35 @@
 
 public class PlayerScript : MonoBehaviour
 {
-	public Vector2 speed = new Vector2(50, 50);
 	private Animator animator;
-	
-	// 2 - Store the movement
+	public Vector2 speed = new Vector2(50, 50);
+
+	public bool bossDestroy = false;
+
 	private Vector2 movement;
+	//private GameObject bg_scroll;
+
+	private ScrollingScript other; 
+	private ScrollingScript bg_script;
+	private ScrollingScript camera;
 
 	void Start() {
+		bg_script = GameObject.Find("0 - Background").GetComponent<ScrollingScript>();
+		camera = GameObject.Find("Main Camera").GetComponent<ScrollingScript>();
+		other = this.gameObject.GetComponent<ScrollingScript>();
 		animator = this.GetComponent<Animator> ();
+		//bg_scroll = GameObject.Find ("0 - Background");
 	}
 
 	void Update()
 	{
-		// 3 - Retrieve axis information
 		float inputX = Input.GetAxis("Horizontal");
 		float inputY = Input.GetAxis("Vertical");
-		
-		// 4 - Movement per direction
+
 		movement = new Vector2(
 			speed.x * inputX,
 			speed.y * inputY);
 
-
-		// 5 - Shooting
 		bool shoot = Input.GetKeyDown(KeyCode.Space);
 		bool noshoot = Input.GetKeyUp(KeyCode.Space);
 				
@@ -36,10 +42,8 @@ public class PlayerScript : MonoBehaviour
 			WeaponScript weapon = GetComponent<WeaponScript>();
 			if (weapon != null)
 			{
-				// false because the player is not an enemy
 				weapon.Attack(false);
 				SoundEffectsHelper.Instance.MakePlayerShotSound();
-				//animator.SetBool("Firing", false);
 			}
 
 		}
@@ -48,7 +52,6 @@ public class PlayerScript : MonoBehaviour
 				animator.SetBool ("Firing", false);
 		}
 
-		// Make sure we are not outside the camera bounds
 		var dist = (transform.position - Camera.main.transform.position).z;
 		
 		var leftBorder = Camera.main.ViewportToWorldPoint(
@@ -73,32 +76,48 @@ public class PlayerScript : MonoBehaviour
 			transform.position.z
 		);
 
-		if(transform.position.x > 45) {
+		if(transform.position.x > 25) {
 
 			if(Application.loadedLevelName == "Stage1")
 			{
-				ScoreCounterScript.current_score += this.GetComponent<HealthScript>().hp * 50;
-				Application.LoadLevel("WinScene");
-				ScoreCounterScript.highest_level = 1;
-				
-				ScoreCounterScript.total_score += ScoreCounterScript.current_score;
+				// boss stuff
+				Destroy(other);
+				Destroy(bg_script);
+
+				// winning stuff
+				if(GameObject.Find ("boss_lvl1") == null)
+				{
+					ScoreCounterScript.current_score += this.GetComponent<HealthScript>().hp * 50;
+
+					if(PlayerPrefs.GetInt ("unlocked") > 1)
+					{
+						// do nothing
+					}
+					else{
+						ScoreCounterScript.highest_level = 1;
+					}
+					
+					
+					ScoreCounterScript.total_score += ScoreCounterScript.current_score;
+					Application.LoadLevel("WinScene");
+				}
+
 			}
 
-			if(Application.loadedLevelName == "Stage2")
+		/*	if(Application.loadedLevelName == "Stage2")
 			{
 				ScoreCounterScript.current_score += this.GetComponent<HealthScript>().hp * 50;
 				Application.LoadLevel("WinScene2");
 				ScoreCounterScript.highest_level = 2;
 				
 				ScoreCounterScript.total_score += ScoreCounterScript.current_score;
-			}
+			} */
 
 		}
 	}
 	
 	void FixedUpdate()
 	{
-		//  Move the game object
 		rigidbody2D.velocity = movement;
 	}
 	
@@ -106,8 +125,7 @@ public class PlayerScript : MonoBehaviour
 	void OnCollisionEnter2D(Collision2D collision)
 	{
 		bool damagePlayer = false;
-		
-		// Collision with enemy
+
 		EnemyScript enemy = collision.gameObject.GetComponent<EnemyScript>();
 		if (enemy != null)
 		{
@@ -118,7 +136,7 @@ public class PlayerScript : MonoBehaviour
 			damagePlayer = true;
 		}
 		
-		// Damage the player
+		// damage player
 		if (damagePlayer)
 		{
 			HealthScript playerHealth = this.GetComponent<HealthScript>();
@@ -128,9 +146,7 @@ public class PlayerScript : MonoBehaviour
 
 	void OnDestroy()
 	{
-		// Game Over.
-		// Add the script to the parent because the current game
-		// object is likely going to be destroyed immediately.
+		// dun dun dun, gameover
 		transform.parent.gameObject.AddComponent<GameOverScript>();
 	}
 }

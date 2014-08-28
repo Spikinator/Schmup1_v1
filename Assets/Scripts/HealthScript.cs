@@ -7,9 +7,6 @@ public class HealthScript : MonoBehaviour
 	private Animator animator;
 	public bool isEnemy = true;
 
-	/*private GameObject displayHit;
-	private Animator hitAnimator;*/
-
 	public void Start()
 	{
 		//displayHit = GameObject.Find ("hitPoint");
@@ -38,32 +35,20 @@ public class HealthScript : MonoBehaviour
 			}
 
 			//hitAnimator.SetBool ("isHit", true);
-			// 'Splosion!
 			SpecialEffectsHelper.Instance.Explosion(transform.position);
-			
-			// SOUND
 			SoundEffectsHelper.Instance.MakeExplosionSound();
-			// Dead!
-
 			Destroy(gameObject);
 		}
-	}
-
-
-	
+	}	
 	void OnTriggerEnter2D(Collider2D otherCollider)
 	{
-		// Is this a shot?
 		ShotScript shot = otherCollider.gameObject.GetComponent<ShotScript>();
 		if (shot != null)
 		{
-			// Avoid friendly fire
 			if (shot.isEnemyShot != isEnemy)
 			{
 				Damage(shot.damage);
-				
-				// Destroy the shot
-				Destroy(shot.gameObject); // Remember to always target the game object, otherwise you will just remove the script
+				Destroy(shot.gameObject); // target object instead of script
 			}
 		}
 	}
