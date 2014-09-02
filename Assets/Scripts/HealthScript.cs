@@ -6,6 +6,7 @@ public class HealthScript : MonoBehaviour
 	public int hp = 1;
 	private Animator animator;
 	public bool isEnemy = true;
+	public bool isBoss = false;
 
 	public void Start()
 	{
@@ -28,6 +29,12 @@ public class HealthScript : MonoBehaviour
 			if(isEnemy)
 			{
 				ScoreCounterScript.current_score += 100;
+				/*if(isBoss)
+				{
+					ScoreCounterScript.current_score += 300;
+					SpecialEffectsHelper.Instance.Explosion(transform.position);
+					SoundEffectsHelper.Instance.MakeExplosionSound();
+				} */
 			}
 			
 			else {

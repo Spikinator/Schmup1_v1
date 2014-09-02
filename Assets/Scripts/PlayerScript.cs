@@ -78,7 +78,7 @@ public class PlayerScript : MonoBehaviour
 			transform.position.z
 		);
 
-		if(transform.position.x > 26) {
+		if(transform.position.x > 23) {
 
 			if(Application.loadedLevelName == "Stage1")
 			{
@@ -108,14 +108,34 @@ public class PlayerScript : MonoBehaviour
 
 			}
 
-		/*	if(Application.loadedLevelName == "Stage2")
+			if(Application.loadedLevelName == "Stage2")
 			{
-				ScoreCounterScript.current_score += this.GetComponent<HealthScript>().hp * 50;
-				Application.LoadLevel("WinScene2");
-				ScoreCounterScript.highest_level = 2;
+				// boss stuff
+				Destroy(other);
+				Destroy(bg_script);
+				Destroy(camera);
+				Destroy(stats);
 				
-				ScoreCounterScript.total_score += ScoreCounterScript.current_score;
-			} */
+				// winning stuff
+				if(GameObject.Find ("boss") == null)
+				{
+					ScoreCounterScript.current_score += this.GetComponent<HealthScript>().hp * 50;
+					
+					if(PlayerPrefs.GetInt ("unlocked") > 2)
+					{
+						// do nothing
+					}
+					else{
+						ScoreCounterScript.highest_level = 2;
+					}
+					
+					
+					ScoreCounterScript.total_score += ScoreCounterScript.current_score;
+					Application.LoadLevel("WinScene2");
+				}
+
+
+			} 
 
 		}
 	}

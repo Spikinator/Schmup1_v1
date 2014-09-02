@@ -164,6 +164,7 @@
      <Compile Include="Assets\NGUI\Scripts\UI\UITiledSprite.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
+     <Compile Include="Assets\Scripts\BossLives.cs" />
      <Compile Include="Assets\Scripts\ClickScript.cs" />
      <Compile Include="Assets\Scripts\ClickToIntro.cs" />
      <Compile Include="Assets\Scripts\CoinPickup.cs" />

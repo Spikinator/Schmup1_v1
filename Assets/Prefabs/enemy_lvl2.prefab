@@ -57,7 +57,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -89.4942017, y: -5.58510876, z: 0}
+  m_LocalPosition: {x: -89.6959381, y: -.0906832218, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400000}
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotPrefab: {fileID: 400000, guid: 6c074722fe6b4f440b809da4fcf4b475, type: 2}
-  shootingRate: 5
+  shootingRate: 6
   max: 0
   min: 0
   getRot: 0
@@ -193,6 +193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 1
   isEnemy: 1
+  isBoss: 0
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
