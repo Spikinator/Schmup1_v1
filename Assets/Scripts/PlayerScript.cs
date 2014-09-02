@@ -14,10 +14,12 @@ public class PlayerScript : MonoBehaviour
 	private ScrollingScript other; 
 	private ScrollingScript bg_script;
 	private ScrollingScript camera;
+	private ScrollingScript stats;
 
 	void Start() {
 		bg_script = GameObject.Find("0 - Background").GetComponent<ScrollingScript>();
 		camera = GameObject.Find("Main Camera").GetComponent<ScrollingScript>();
+		stats = GameObject.Find("4 - PlayerStats").GetComponent<ScrollingScript>();
 		other = this.gameObject.GetComponent<ScrollingScript>();
 		animator = this.GetComponent<Animator> ();
 		//bg_scroll = GameObject.Find ("0 - Background");
@@ -76,16 +78,18 @@ public class PlayerScript : MonoBehaviour
 			transform.position.z
 		);
 
-		if(transform.position.x > 25) {
+		if(transform.position.x > 26) {
 
 			if(Application.loadedLevelName == "Stage1")
 			{
 				// boss stuff
 				Destroy(other);
 				Destroy(bg_script);
+				Destroy(camera);
+				Destroy(stats);
 
 				// winning stuff
-				if(GameObject.Find ("boss_lvl1") == null)
+				if(GameObject.Find ("boss") == null)
 				{
 					ScoreCounterScript.current_score += this.GetComponent<HealthScript>().hp * 50;
 

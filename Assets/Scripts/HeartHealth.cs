@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class HeartHealth : MonoBehaviour {
@@ -13,8 +13,6 @@ public class HeartHealth : MonoBehaviour {
 		
 	// Update is called once per frame
 	void Update () {
-
-
 		if (holder != null) {
 
 			holder = GameObject.Find ("playership");
@@ -23,7 +21,6 @@ public class HeartHealth : MonoBehaviour {
 			
 			animator.SetInteger("Health", health);
 		}
-
 
 		else if(holder == null) 
 		{

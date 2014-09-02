@@ -57,7 +57,7 @@ public class WeaponScript : MonoBehaviour
 				rand1 = Random.Range (min, max);
 				//Transform parentTransform = other.gameObject.transform.parent.transform;
 				move.direction = this.transform.right; // towards in 2D space is the right of the sprite
-				Debug.Log (rand1);
+				//Debug.Log (rand1);
 				//this.transform.Rotate(0, 0, rand1);
 				this.transform.Rotate(0, 0, rand1);
 			}
