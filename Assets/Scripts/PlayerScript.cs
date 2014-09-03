@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using System;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -27,6 +27,13 @@ public class PlayerScript : MonoBehaviour
 
 	void Update()
 	{
+		string date = DateTime.Now.ToString("hh:mm:ss");
+		
+		//Debug.Log(date);
+
+		string date2 = DateTime.Now.ToString("yyyyMMdd");
+		//Debug.Log (date2);
+
 		float inputX = Input.GetAxis("Horizontal");
 		float inputY = Input.GetAxis("Vertical");
 

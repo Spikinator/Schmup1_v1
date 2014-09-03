@@ -29,12 +29,14 @@ public class HealthScript : MonoBehaviour
 			if(isEnemy)
 			{
 				ScoreCounterScript.current_score += 100;
-				/*if(isBoss)
+				ScoreCounterScript.enemy_count += 1;
+
+				if(isBoss)
 				{
 					ScoreCounterScript.current_score += 300;
 					SpecialEffectsHelper.Instance.Explosion(transform.position);
 					SoundEffectsHelper.Instance.MakeExplosionSound();
-				} */
+				}
 			}
 			
 			else {

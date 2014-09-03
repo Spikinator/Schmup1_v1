@@ -332,7 +332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 3
   isEnemy: 1
-  isBoss: 0
+  isBoss: 1
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1

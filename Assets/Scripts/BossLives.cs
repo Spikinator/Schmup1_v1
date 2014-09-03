@@ -25,8 +25,6 @@ public class BossLives : MonoBehaviour {
 		else if(holder == null) 
 		{
 			animator.SetInteger ("Health", 0);
-		}
-		
-		
+		}	
 	}
 }

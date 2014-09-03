@@ -14,6 +14,8 @@ public class ScoreCounterScript : MonoBehaviour {
 
 	public static int unlocked;
 
+	public static int enemy_count;
+
 	public GUIText scoreKeeper;
 	public GUIText cashTracker;
 
@@ -29,6 +31,10 @@ public class ScoreCounterScript : MonoBehaviour {
 			PlayerPrefs.SetInt("unlocked", 0);		
 		}
 
+		if (!PlayerPrefs.HasKey ("enemy_count")) {
+			PlayerPrefs.SetInt("enemy_count", 0);		
+		}
+
 		if (!PlayerPrefs.HasKey ("cash")) {
 			PlayerPrefs.SetInt("cash", 0);		
 		}
@@ -37,8 +43,7 @@ public class ScoreCounterScript : MonoBehaviour {
 			PlayerPrefs.SetInt("highest_level", 0);		
 		}
 
-		if(!PlayerPrefs.HasKey ("best_score"))
-		{
+		if(!PlayerPrefs.HasKey ("best_score")) {
 			PlayerPrefs.SetInt ("best_score", 0);
 		}
 
@@ -47,6 +52,7 @@ public class ScoreCounterScript : MonoBehaviour {
 		{
 			PlayerPrefs.SetInt ("total_score", 0);
 		}
+		enemy_count = PlayerPrefs.GetInt ("enemy_count");
 
 		unlocked = PlayerPrefs.GetInt ("unlocked");
 
@@ -75,6 +81,7 @@ public class ScoreCounterScript : MonoBehaviour {
 		cashTracker.text = "Cash: $" + cash;
 		cashTracker.fontSize = fontSize;
 
+		PlayerPrefs.SetInt ("enemy_count", enemy_count);
 		PlayerPrefs.SetInt ("unlocked", unlocked);
 		PlayerPrefs.SetInt ("best_score", best_score);
 		PlayerPrefs.SetInt ("total_score", total_score);
