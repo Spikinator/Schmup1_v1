@@ -143,6 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 3
   isEnemy: 0
+  isBoss: 0
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -171,6 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: {x: 25, y: 25}
+  bossDestroy: 0
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
